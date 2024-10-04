@@ -26,22 +26,22 @@ public class MainTest {
 
     @BeforeEach
     void setUp() {
-        bread = new Bread("Test", 10, "Test Bread");
-        chocolate = new Chocolate("Test", 10, "Test Chocolate");
-        coke = new Coke("Test", 10, "Test Coke");
-        troll = new Troll("Shrek", 1000, 100);
+        bread = new Bread("Test", 10, 100, "bread");
+        chocolate = new Chocolate("Test", 10, 100,"Test Chocolate");
+        coke = new Coke("Test", 10, 100, "Test Coke");
+        troll = new Troll(100, 1000, "Shrek");
     }
 
     @DisplayName("Subclasslar Superclass değişkenlerinin değerlerine ulaşabiliyor mu?")
     @Test
     public void testProductForSaleAccessModifiers() throws NoSuchFieldException {
-        assertEquals(bread.getType(), "Test");
-        assertEquals(bread.getPrice(), 10);
-        assertEquals(bread.getDescription(), "Test Bread");
+        assertEquals(bread.getType(), 10);
+        assertEquals(bread.getPrice(), 100);
+        assertEquals(bread.getDescription(), "Test");
 
-        assertEquals(chocolate.getType(), "Test");
-        assertEquals(chocolate.getPrice(), 10);
-        assertEquals(chocolate.getDescription(), "Test Chocolate");
+        assertEquals(chocolate.getType(), 10);
+        assertEquals(chocolate.getPrice(), 100);
+        assertEquals(chocolate.getDescription(), "Test");
     }
 
     @DisplayName("Tüm sınıflar doğru sınıftan türüyorlar mı?")
@@ -55,9 +55,9 @@ public class MainTest {
     @DisplayName("getSalesPrice doğru sonuçlar üretiyor mu?")
     @Test
     public void testGetSalesPrice() throws NoSuchFieldException {
-        assertEquals(bread.getSalesPrice(3), 30);
-        assertEquals(chocolate.getSalesPrice(5), 50);
-        assertEquals(coke.getSalesPrice(4), 40);
+        assertEquals(bread.getSalesPrice(3), 300);
+        assertEquals(chocolate.getSalesPrice(5), 500);
+        assertEquals(coke.getSalesPrice(4), 400);
     }
 
     @DisplayName("showDetails methodu tanımlanmış mı?")
